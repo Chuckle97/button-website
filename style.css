@@ -442,15 +442,16 @@ body.drawer-open { overflow: hidden; }
     
     .tagline {
         position: absolute;
-        top: -48px;
+        top: -25px;
         left: 0;
         margin: 0;
         font-size: clamp(14px, 3.5vw, 20px);
+        white-space: nowrap;
     }
     
     .profile-wrapper {
         width: clamp(150px, 35vw, 210px);
-        top: -10px;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
