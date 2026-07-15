@@ -428,6 +428,14 @@ body.drawer-open { overflow: hidden; }
         padding: 40px 15px;
     }
 
+    /* On mobile, disable scroll-based transforms to prevent jitter; keep entrance animation */
+    .tagline,
+    .hero-name,
+    .hero-subtitle,
+    .hero-buttons {
+        transform: none !important;
+    }
+
     .hero-content {
         padding-top: 160px; /* Leave space for absolute image */
     }
