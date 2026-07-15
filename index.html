@@ -1,81 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuckle Flores Testing Portfolio</title>
+    <title>Chuckle Flores | Web Developer & Computer Engineering Graduate</title>
+    <!-- Google Fonts: Bebas Neue for headings, Inter for body/subtext -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <nav>
-        <a href="#home">🏠 Home</a>
-        <a href="#summary">📝 Summary</a>
-        <a href="#skills">💻 Skills</a>
-        <a href="#about">👤 About Me</a>
-        <a href="#HEHE">😂 Pindotin Monayan Beybe</a>
-    </nav>
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">&lt;CF/&gt;</a>
+            <nav class="nav-links">
+                <a href="#home" class="active">HOME</a>
+                <a href="#summary">SUMMARY</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <button id="hamburger" class="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Drawer Backdrop -->
+    <div id="drawerBackdrop" class="drawer-backdrop" aria-hidden="true"></div>
 
-    <h1 id="home">Hello, I am Chuckle Flores</h1>
+    <!-- Mobile Drawer (hidden on desktop) -->
+    <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+        <div class="drawer-inner">
+            <button id="drawerClose" class="drawer-close" aria-label="Close menu">&times;</button>
+            <a href="#home" class="drawer-logo">&lt;CF/&gt;</a>
+            <nav class="drawer-nav">
+                <a href="#home">HOME</a>
+                <a href="#summary">SUMMARY</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
+    </div>
+    <!-- Main Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            
+            <!-- Hero Content: Handles Image & Text Overlaps -->
+            <div class="hero-content">
+                <!-- Profile Image container (layered behind the name) -->
+                <div class="profile-wrapper">
+                    <img src="images/profile.png" alt="Chuckle Flores" class="profile-img">
+                </div>
+                
+                <!-- Name and Tagline Wrapper (layered in front of the image) -->
+                <div class="name-wrapper">
+                    <div class="tagline">HELLO I'M</div>
+                    <h1 class="hero-name">CHUCKLE FLORES!</h1>
+                </div>
+                
+                <!-- Subtitle Sub-header -->
+                <p class="hero-subtitle">WEB DEVELOPER <span>|</span> COMPUTER ENGINEERING GRADUATE</p>
+            </div>
 
-    <h2 id="summary">Summary</h2>
+            <!-- Call to Action Buttons -->
+            <div class="hero-buttons">
+                <!-- Resume Button -->
+                <a href="resume/RESUME%20UPDATED.pdf" download class="btn btn-resume">
+                    DOWNLOAD MY RESUME
+                </a>
 
-    <p>
-        Computer Engineering graduate with experience in administrative
-        support, customer service, software troubleshooting, and graphic
-        design. Through academic projects, self-learning, and professional
-        experience, I have built a foundation in HTML, Java, Python,
-        GitHub, and Microsoft Excel. I enjoy learning new technologies,
-        solving problems, and working with others, and I'm excited to
-        begin my career in a role where I can continue developing my
-        skills while making meaningful contributions.
-    </p>
+                <!-- LinkedIn Button -->
+                <a href="https://www.linkedin.com/in/chuckle-flores-0183b1371/" target="_blank" class="btn btn-linkedin">
+                    <span>LINKEDIN</span>
+                    <svg class="icon-svg icon-linkedin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
 
-    <h2 id="skills">My Current Skills</h2>
+                <!-- Git Hub Button (Git Branch Icon) -->
+                <a href="https://github.com/Chuckle97" target="_blank" class="btn btn-github">
+                    <span>GIT HUB</span>
+                    <svg class="icon-svg icon-git" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.384 11.237L12.762.616a1.086 1.086 0 0 0-1.536 0L9.43 2.413l2.848 2.848a3.256 3.256 0 0 1 3.535 3.535 3.257 3.257 0 0 1 0 4.606 3.257 3.257 0 0 1-4.606 0 3.252 3.252 0 0 1-.77-1.22L7.64 15.018a3.262 3.262 0 1 1-1.424-1.424l2.818-2.82a3.23 3.23 0 0 1 .184-3.19L6.37 4.735 1.087 10.02a1.086 1.086 0 0 0 0 1.536l10.623 10.622a1.086 1.086 0 0 0 1.536 0l10.138-10.137a1.086 1.086 0 0 0 0-1.804zM4.335 18.23a1.086 1.086 0 1 0 0-2.172 1.086 1.086 0 0 0 0 2.172zm12.392-6.52a1.086 1.086 0 1 0 0-2.171 1.086 1.086 0 0 0 0 2.171z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <ul>
-        <li>Software Troubleshooting</li>
-        <li>Hardware Troubleshooting</li>
-        <li>Basic Electronic & Circuit Design</li>
-        <li>HTML</li>
-        <li>Java</li>
-        <li>Python</li>
-        <li>Git & GitHub</li>
-        <li>Microsoft Excel</li>
-        <li>Canva</li>
-        <li>Video Editing</li>
-        <li>Problem Solving</li>
-        <li>Attention to Detail</li>
-        <li>Customer Service</li>
-    </ul>
+    <!-- Supporting Sections for functional scroll navigation -->
+    <section id="summary" class="section-content">
+        <div class="content-container">
+            <h2>Summary</h2>
+            <div class="divider"></div>
+            <p>I am a passionate Computer Engineering graduate specializing in Web Development, creating responsive, modern, and user-centric web applications.</p>
+        </div>
+    </section>
 
-    <h2 id="about">About Me</h2>
+    <section id="skills" class="section-content alternate">
+        <div class="content-container">
+            <h2>Skills</h2>
+            <div class="divider"></div>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Responsive Web Design</li>
+                <li>Computer Engineering Principles</li>
+            </ul>
+        </div>
+    </section>
 
-    <p>
-        I am a recent Computer Engineering graduate from La Consolacion University Philippines.
-        I enjoy learning new technologies through trial and error because I believe that
-        hands-on experience is one of the best ways to grow. My goal is to continuously
-        improve my web development and technical skills as I begin my professional career.
+    <section id="about" class="section-content">
+        <div class="content-container">
+            <h2>About Me</h2>
+            <div class="divider"></div>
+            <p>Combining the analytical problem-solving of computer engineering with the creative design of web development to build premium digital experiences.</p>
+        </div>
+    </section>
 
-        Although I am a fresh graduate and still gaining professional experience, I am
-        eager to learn, adapt, troubleshoot, debug, and contribute to a company that values
-        growth and continuous improvement. I believe that the right organization can help me
-        develop my skills while I also contribute my dedication, work ethic, and willingness
-        to learn.
+    <section id="contact" class="section-content alternate">
+        <div class="content-container">
+            <h2>Contact</h2>
+            <div class="divider"></div>
+            <p>Let's work together. Reach out via email or connect with me on social platforms!</p>
+        </div>
+    </section>
 
-        My Christian faith reminds me to work with integrity and excellence. As Colossians
-        3:23 teaches, "Whatever you do, work at it with all your heart, as working for the
-        Lord." I strive to become the best version of myself while creating meaningful
-        solutions through technology.
-    </p>
+    <footer class="footer">
+        <p>&copy; 2026 Chuckle Flores. All Rights Reserved.</p>
+    </footer>
 
-    <h2 id="HEHE">Pindotin Monayan Beybe 😂</h2>
+    <script>
+        // Simple active link tracker on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-links a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 120)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-    <a href="https://www.youtube.com/watch?v=Aq5WXmQQooo" target="_blank">
-        <button>Click Me</button>
-    </a>
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
 
+        const homeLinks = document.querySelectorAll('.logo, .nav-links a[href="#home"]');
+        const otherNavLinks = document.querySelectorAll('.nav-links a:not([href="#home"])');
+        const body = document.body;
+        let homePreviewActive = false;
+
+        const showHomePreview = (event) => {
+            event.preventDefault();
+            body.classList.add('home-preview');
+            homePreviewActive = true;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        const cancelHomePreview = () => {
+            if (!homePreviewActive) return;
+            body.classList.remove('home-preview');
+            homePreviewActive = false;
+        };
+
+        homeLinks.forEach(link => {
+            link.addEventListener('click', showHomePreview);
+        });
+
+        otherNavLinks.forEach(link => {
+            link.addEventListener('click', cancelHomePreview);
+        });
+
+        window.addEventListener('wheel', cancelHomePreview, { passive: true });
+        window.addEventListener('touchstart', cancelHomePreview, { passive: true });
+        window.addEventListener('keydown', (event) => {
+            if (['ArrowDown', 'PageDown', 'Space'].includes(event.code)) {
+                cancelHomePreview();
+            }
+        });
+
+        const heroSection = document.querySelector('.hero');
+        const bodyStyle = document.body.style;
+
+        const updateHeroVisibility = () => {
+            if (document.body.classList.contains('home-preview')) {
+                bodyStyle.setProperty('--hero-visibility', 1);
+                return;
+            }
+            const heroRect = heroSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const threshold = viewportHeight * 0.28;
+            const visibleRatio = Math.max(0, Math.min(1, (heroRect.bottom - threshold) / (viewportHeight - threshold)));
+            bodyStyle.setProperty('--hero-visibility', visibleRatio);
+        };
+
+        window.addEventListener('scroll', updateHeroVisibility, { passive: true });
+        window.addEventListener('resize', updateHeroVisibility);
+        updateHeroVisibility();
+
+        /* Mobile drawer toggle */
+        const hamburger = document.getElementById('hamburger');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerBackdrop = document.getElementById('drawerBackdrop');
+        const drawerClose = document.getElementById('drawerClose');
+
+        const openDrawer = () => {
+            mobileDrawer.classList.add('open');
+            drawerBackdrop.classList.add('open');
+            mobileDrawer.setAttribute('aria-hidden', 'false');
+            drawerBackdrop.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('drawer-open');
+        };
+        const closeDrawer = () => {
+            mobileDrawer.classList.remove('open');
+            drawerBackdrop.classList.remove('open');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+            drawerBackdrop.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('drawer-open');
+        };
+
+        if (hamburger) hamburger.addEventListener('click', openDrawer);
+        if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+        if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+        // Close drawer when a drawer link is clicked
+        document.querySelectorAll('.drawer-nav a').forEach(a => {
+            a.addEventListener('click', () => {
+                closeDrawer();
+            });
+        });
+    </script>
 </body>
-
 </html>
