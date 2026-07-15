@@ -428,16 +428,8 @@ body.drawer-open { overflow: hidden; }
         padding: 40px 15px;
     }
 
-    /* Keep mobile hero text/buttons fully visible while preserving entrance animation */
-    .name-wrapper,
-    .hero-name,
-    .hero-subtitle,
-    .hero-buttons {
-        opacity: 1 !important;
-    }
-    
     .hero-content {
-        padding-top: 165px; /* Leave space for absolute image */
+        padding-top: 160px; /* Leave space for absolute image */
     }
     
     .tagline {
@@ -450,16 +442,24 @@ body.drawer-open { overflow: hidden; }
     
     .profile-wrapper {
         width: clamp(150px, 35vw, 210px);
-        top: -20px;
+        top: -10px;
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    .profile-img {
+        border-radius: 50%;
+        display: block;
     }
     
     .name-wrapper {
         display: inline-block;
+        margin: 0 auto;
+        width: auto;
         text-align: center;
-        width: 100%;
     }
     
     .hero-name {
@@ -482,6 +482,7 @@ body.drawer-open { overflow: hidden; }
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 12px;
         margin-top: 40px;
     }
@@ -489,6 +490,7 @@ body.drawer-open { overflow: hidden; }
     .btn {
         width: 100%;
         max-width: 280px;
+        margin: 0 auto;
         padding: 12px 24px;
         font-size: 18px;
     }
