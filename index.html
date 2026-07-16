@@ -97,19 +97,24 @@
 
     <!-- Supporting Sections for functional scroll navigation -->
     <section id="summary" class="section-content">
-        <div class="content-container">
-            <h2>Summary</h2>
-            <div class="divider"></div>
-            <p>Computer Engineering graduate with a passion for web development,
-technical support, and learning new technologies. Through academic
-projects, personal projects, and hands-on experience, I have developed
-skills in HTML, CSS, Java, Python, Git, GitHub, and Microsoft Excel. I also
-use AI tools such as ChatGPT, Claude, and Gemini to assist with coding,
-research, troubleshooting, and improving productivity. I enjoy solving
-technical problems, building user-friendly websites, and working with
-others to create practical and efficient solutions. As a fresh graduate, I
-am eager to continue learning, grow my technical skills, and contribute
-to a dynamic team.</p>
+        <div class="content-container summary-panel">
+            <div class="summary-card">
+                <button id="summaryImageButton" class="summary-image-button" type="button" aria-expanded="false">
+                    <img src="images/1.png" alt="Click to reveal summary" class="summary-image">
+                    <div class="summary-overlay">
+                        <span class="summary-label">Click to reveal summary</span>
+                        <span class="summary-arrow">⇨</span>
+                    </div>
+                </button>
+            </div>
+            <div class="summary-text">
+                <h2>Who is this guy?</h2>
+                <div class="divider"></div>
+                <p class="summary-intro">This is the summary page. Click the picture to the left to reveal the full introduction.</p>
+                <div id="summaryDetails" class="summary-details hidden">
+                    <p>Computer Engineering graduate with a passion for web development, technical support, and learning new technologies. Through academic projects, personal projects, and hands-on experience, I have developed skills in HTML, CSS, Java, Python, Git, GitHub, and Microsoft Excel. I also use AI tools such as ChatGPT, Claude, and Gemini to assist with coding, research, troubleshooting, and improving productivity. I enjoy solving technical problems, building user-friendly websites, and working with others to create practical and efficient solutions. As a fresh graduate, I am eager to continue learning, grow my technical skills, and contribute to a dynamic team.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -322,6 +327,37 @@ to a dynamic team.</p>
         document.querySelectorAll('.drawer-nav a').forEach(a => {
             a.addEventListener('click', () => {
                 closeDrawer();
+                cancelHomePreview();
+            });
+        });
+
+        // Summary reveal interaction
+        const summaryButton = document.getElementById('summaryImageButton');
+        const summaryDetails = document.getElementById('summaryDetails');
+
+        const toggleSummaryDetails = () => {
+            if (!summaryDetails) return;
+            const isHidden = summaryDetails.classList.contains('hidden');
+            summaryDetails.classList.toggle('hidden', !isHidden);
+            if (summaryButton) {
+                summaryButton.setAttribute('aria-expanded', String(isHidden));
+                summaryButton.querySelector('.summary-label').textContent = isHidden ? 'Hide summary' : 'Click to reveal summary';
+            }
+        };
+
+        if (summaryButton) {
+            summaryButton.addEventListener('click', toggleSummaryDetails);
+        }
+
+        document.querySelectorAll('.nav-links a[href="#summary"], .drawer-nav a[href="#summary"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (summaryDetails && summaryDetails.classList.contains('hidden')) {
+                    summaryDetails.classList.remove('hidden');
+                    if (summaryButton) {
+                        summaryButton.setAttribute('aria-expanded', 'true');
+                        summaryButton.querySelector('.summary-label').textContent = 'Hide summary';
+                    }
+                }
             });
         });
     </script>
