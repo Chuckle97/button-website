@@ -347,13 +347,15 @@ body.drawer-open { overflow: hidden; }
     overflow: hidden;
     background: transparent;
     padding: 40px 0;
+    display: block;
 }
 
 .skills-track {
     display: flex;
     gap: 20px;
-    animation: scroll-left 30s linear infinite;
     width: max-content;
+    animation: scroll-left 30s linear infinite;
+    will-change: transform;
 }
 
 .skill-badge {
@@ -362,6 +364,7 @@ body.drawer-open { overflow: hidden; }
     justify-content: center;
     width: 120px;
     height: 120px;
+    min-width: 120px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.14);
     color: #ffffff;
@@ -382,10 +385,10 @@ body.drawer-open { overflow: hidden; }
 }
 
 @keyframes scroll-left {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
+    to {
         transform: translateX(-50%);
     }
 }
